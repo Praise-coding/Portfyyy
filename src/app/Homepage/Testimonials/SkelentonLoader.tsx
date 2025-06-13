@@ -5,7 +5,7 @@ async function TestimonialLoader() {
     return (
         <section id={"Testimonials"} className={"flex px-[20px] justify-center"}>
             <div className={"py-[92px] md:py-[150px] max-w-[1170px] w-full"}>
-                <h2 className={"  text-center leading-[32px] uppercase tracking-[3px] text-[#EF6D58]"}>
+                <h2 className={" text-base text-center leading-[32px] uppercase tracking-[3px] text-[#EF6D58]"}>
                     Testimonials
                 </h2>
                 <h3 className={"text-center mt-[17px] sm:mt-[20px]   font-[800] text-[56px] leading-[64px] tracking-[-1px] text-white"}>

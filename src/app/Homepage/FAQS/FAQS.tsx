@@ -23,7 +23,7 @@ async function Faqs() {
                         Learn More
                     </Link>
                 </AnimateCon>
-                <AnimateCon  responsiveInitial={{y: 20, opacity: 0}}
+                <AnimateCon persistWhileResponsive={false} responsiveInitial={{y: 20, opacity: 0}}
                              responsiveAnimation={{y: 0, opacity: 100, transition: {duration: 0.7}}} once={false} htmlElement={"div"} hidden={{x: 20, opacity: 0}} visible={{x: 0, opacity: 100, transition: {duration : 0.7}}} className={"max-w-[568.54px] mt-[36px] sm:mt-0 w-full"}>
                     {faqs.map((data, key) => {
                         return (

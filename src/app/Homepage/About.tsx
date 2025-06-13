@@ -11,7 +11,7 @@ function About() {
             className={"flex relative z-[20] justify-center px-[20px] mt-[71px] md:mt-[130px]"}>
             <div
                 className={"grid grid-cols-1 md:grid-cols-2 items-center max-w-[1170px] w-full justify-between gap-[16px] md:gap-[130px]"}>
-                <AnimateCon once={false} responsiveInitial={{y: 20, opacity: 0}}
+                <AnimateCon persistWhileResponsive={false} once={false} responsiveInitial={{y: 20, opacity: 0}}
                             responsiveAnimation={{y: 0, opacity: 100, transition: {duration: 0.7}}}
                             hidden={{x: -20, opacity: 0}}
                             visible={{opacity: 1, x: 0, transition: {duration: 0.7}}}
@@ -19,7 +19,7 @@ function About() {
                     <Image sizes="(max-width: 768px) 100vw, 800px" src={pic} alt={"About image"} width={800}
                            height={600} className={"w-full"}/>
                 </AnimateCon>
-                <AnimateCon once={false} responsiveInitial={{y: 20, opacity: 0}}
+                <AnimateCon persistWhileResponsive={false} once={false} responsiveInitial={{y: 20, opacity: 0}}
                             responsiveAnimation={{y: 0, opacity: 100, transition: {duration: 0.7}}} hidden={{x: 20, opacity: 0}}
                             visible={{opacity: 1, x: 0, transition: {duration: 0.7}}} htmlElement={"div"}
                             className={" sm:mt-0"}>

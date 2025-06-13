@@ -34,7 +34,7 @@ function LatestWork({projectsData}: { projectsData: ProjectTypes[] }) {
                         visible={{opacity: 100, transition: {duration: 0.7}}}
                         className={"flex px-[20px] h-fit bg-[rgba(0,0,0,0.2)] justify-center"}>
                 <div className={"py-[92px] md:py-[129px] max-w-[1170px] w-full"}>
-                    <h2 className={"  text-center leading-[32px] uppercase tracking-[3px] text-[#EF6D58]"}>
+                    <h2 className={" text-base text-center leading-[32px] uppercase tracking-[3px] text-[#EF6D58]"}>
                         Portfolio
                     </h2>
                     <h3 className={"text-center mt-[17px] sm:mt-[20px]   font-[800] text-[56px] leading-[64px] tracking-[-1px] text-white"}>

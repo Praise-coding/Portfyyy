@@ -9,6 +9,7 @@ type AnimateConProps<generic extends motionType> = MotionProps & {
     children: React.ReactNode,
     responsiveInitial?: TargetAndTransition
     responsiveAnimation?: TargetAndTransition
+    persistWhileResponsive?: boolean
     className?: string,
     refProp?: React.RefObject<HTMLElement | null>,
     once?: boolean,
@@ -37,6 +38,7 @@ export default function AnimateCon<T extends motionType>({
                                                              responsiveAnimation,
                                                              responsiveInitial,
                                                              once = true,
+                                                             persistWhileResponsive = true,
                                                              hidden, visible,
                                                              ...MotionSvgProps
 
@@ -46,7 +48,7 @@ export default function AnimateCon<T extends motionType>({
     const Container = (motion?.[htmlElement || "div"]) as React.ForwardRefExoticComponent<
         HTMLMotionProps<keyof tagsType>
     >;
-    const screenWidth = useScreenWidth(!!responsiveAnimation)
+    const screenWidth = useScreenWidth(persistWhileResponsive)
     const isDesktop = screenWidth > 700
     console.log(isDesktop, screenWidth)
     return (
@@ -54,8 +56,8 @@ export default function AnimateCon<T extends motionType>({
             ref={refProp ? refProp : ref}
             className={className}
             {...MotionSvgProps}
-            initial={responsiveAnimation ? (isDesktop ? hidden : responsiveInitial) : hidden}
-            animate={responsiveAnimation ? (isDesktop ? (inView ? visible : hidden) : inView ? responsiveAnimation : responsiveInitial) : (inView ? visible : hidden)}
+            initial={!persistWhileResponsive ? (isDesktop ? hidden : responsiveInitial) : hidden}
+            animate={!persistWhileResponsive ? (isDesktop ? (inView ? visible : hidden) : inView ? responsiveAnimation : responsiveInitial) : (inView ? visible : hidden)}
         >
             {children}
         </Container>

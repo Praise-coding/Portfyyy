@@ -5,7 +5,7 @@ import AnimateCon from "@/app/Wrappers/AnimateCon";
 
 function ListItem({data, keyProp}: { data: string, keyProp: number }) {
     return (
-        <AnimateCon once={false} responsiveInitial={{y: 20, opacity: 0}}
+        <AnimateCon persistWhileResponsive={true} once={false} responsiveInitial={{y: 20, opacity: 0}}
                     responsiveAnimation={{y: 0, opacity: 100, transition: {duration: 0.7}}} hidden={{x: 20, opacity: 0}}
                     visible={{x: 0, opacity: 1, transition: {duration: 0.7, delay: keyProp / 8}}}
                     className={`flex ${keyProp > 0 ? "mt-[32px]" : "0px"} items-center gap-[38px] md:gap-[54px] `}>
@@ -28,7 +28,7 @@ function HowWeWork() {
     return (
         <section className={"flex px-[20px] overflow-hidden mt-[95px] md:mt-[140px] justify-center"}>
             <div className={"max-w-[1170px] md:flex items-center justify-between gap-[130px] w-full"}>
-                <AnimateCon once={false} hidden={{x: -50, opacity: 0}}
+                <AnimateCon  once={false} hidden={{x: -50, opacity: 0}}
                             visible={{x: 0, opacity: 1, transition: {duration: 0.7}}}>
                     <h3 className={"  leading-[32px] uppercase tracking-[3px] text-[#EF6D58]"}>
                         How We Work

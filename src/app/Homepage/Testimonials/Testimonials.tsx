@@ -10,7 +10,7 @@ async function Testimonials() {
 
         <AnimateCon once={false} htmlElement={"section"} hidden={{opacity: 0}} visible={{opacity: 100, transition:{duration : 0.7}}} className={"flex overflow-hidden px-[20px] justify-center"}>
             <div id={"Testimonials"} className={"py-[92px] md:py-[150px] max-w-[1170px] w-full"}>
-                <h2 className={"  text-center leading-[32px] uppercase tracking-[3px] text-[#EF6D58]"}>
+                <h2 className={" text-base text-center leading-[32px] uppercase tracking-[3px] text-[#EF6D58]"}>
                     Testimonials
                 </h2>
                 <h3 className={"text-center mt-[17px] sm:mt-[20px]   font-[800] text-[56px] leading-[64px] tracking-[-1px] text-white"}>
