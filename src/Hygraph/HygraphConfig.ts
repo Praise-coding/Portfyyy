@@ -65,7 +65,6 @@ export async function testimonialData(): Promise<TestimonialTypes[]> {
 
 export async function faqData(): Promise<FAQSTypes[]> {
     const {faqs} = await hygraph.request<{ faqs: FAQSTypes[] }>(GET_FAQS);
-    console.log(faqs)
     return faqs
 }
 

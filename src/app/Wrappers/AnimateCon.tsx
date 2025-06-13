@@ -1,7 +1,6 @@
 "use client"
 import {HTMLMotionProps, motion, MotionProps, TargetAndTransition, useInView} from 'framer-motion'
-import React, {useRef} from 'react'
-import {useScreenWidth} from "@/app/hooks/useScreenWidth";
+import React, {useMemo, useRef} from 'react'
 
 type motionType = keyof typeof motion
 type AnimateConProps<generic extends motionType> = MotionProps & {
@@ -48,16 +47,16 @@ export default function AnimateCon<T extends motionType>({
     const Container = (motion?.[htmlElement || "div"]) as React.ForwardRefExoticComponent<
         HTMLMotionProps<keyof tagsType>
     >;
-    const screenWidth = useScreenWidth(persistWhileResponsive)
-    const isDesktop = screenWidth > 700
-    console.log(isDesktop, screenWidth)
+    const isDesktop = useMemo(() => typeof window !== 'undefined' && window.matchMedia("(min-width: 700px)").matches, []);
+    const initial = !persistWhileResponsive ? (isDesktop ? hidden : responsiveInitial) : hidden
+    const animate = !persistWhileResponsive ? (isDesktop ? (inView ? visible : hidden) : inView ? responsiveAnimation : responsiveInitial) : (inView ? visible : hidden)
     return (
         <Container
             ref={refProp ? refProp : ref}
             className={className}
             {...MotionSvgProps}
-            initial={!persistWhileResponsive ? (isDesktop ? hidden : responsiveInitial) : hidden}
-            animate={!persistWhileResponsive ? (isDesktop ? (inView ? visible : hidden) : inView ? responsiveAnimation : responsiveInitial) : (inView ? visible : hidden)}
+            initial={initial}
+            animate={animate}
         >
             {children}
         </Container>

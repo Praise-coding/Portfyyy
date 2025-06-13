@@ -12,7 +12,6 @@ import {useRouter} from "next/navigation";
 
 function LatestWork({projectsData}: { projectsData: ProjectTypes[] }) {
     const [state, setState] = useState<null | ProjectTypes>(null)
-    console.log(projectsData)
     const [data, setData] = useState<ProjectTypes[]>(projectsData)
 
     const {pages, currentPage, largestIndex, smallestIndex} = usePagination(data, 'page')
