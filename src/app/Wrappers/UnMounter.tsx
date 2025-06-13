@@ -1,40 +1,24 @@
 "use client"
-import React, {useEffect, useRef, useState} from 'react';
-import {useElementSize} from "@/app/hooks/useElementsSize";
-import {motion} from 'framer-motion';
+import React from 'react';
+import AnimateCon from "@/app/Wrappers/AnimateCon";
 
 type elements = {
     section: HTMLElement,
     div: HTMLElement
 }
 
-function UnMounter({children, applyHeight = true, className, HtmlElement}: {
+function UnMounter({children, className, HtmlElement}: {
     children: React.ReactNode,
     className?: string,
     HtmlElement?: keyof elements
-    applyHeight?: boolean
 }) {
-    const ref = useRef(null)
-    const {height, inView} = useElementSize(ref)
-    const Wrapper = motion?.[!HtmlElement ? "div" : HtmlElement]
 
-    const [show, setShow] = useState(false)
-
-    useEffect(() => {
-        setTimeout(() => {
-            setShow(true)
-        }, 2000)
-    }, []);
-    const conditionalRender = show ? children : ""
-    return ( <>
-            {<Wrapper initial={{opacity: 0}} animate={{opacity: (inView && show) ? 100 : 0, transition: {duration: 0.7}}}
-                      className={className} ref={ref}>
-                {!applyHeight && !inView ? "" : (inView ? conditionalRender : height ?
-                    <div style={{height: applyHeight ? height + "px" : "0px"}}>
-
-                    </div> : conditionalRender)}
-            </Wrapper>}
-    </>
+    return (<>
+            <AnimateCon once={false} className={className} htmlElement={HtmlElement} hidden={{opacity: 0}}
+                        visible={{opacity: 1, transition: {duration: 0.7}}}>
+                {children}
+            </AnimateCon>
+        </>
 
     );
 }
