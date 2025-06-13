@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@config "../../tailwind.config.js";
+
+body::-webkit-scrollbar{
+    scrollbar-width: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+
+body{
+    background-color: #030E21;
+}
+
+#newsletterInput::placeholder {
+    line-height: 32px;
+    color:rgba(57, 20, 0, 0.64)
+}
+
+
+#newsletterInput:focus{
+    outline:none;
+}
+
