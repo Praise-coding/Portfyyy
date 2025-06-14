@@ -5,7 +5,7 @@ function HelpingHand() {
     return (
         <section className=" mt-[132px]  flex justify-center">
             <div
-                className="max-w-[1170px] gap-[86px] bg-[rgba(2,9,23,0.73)] items-center text-center justify-center rounded-[6px] sm:py-[94px] py-[60px] px-[28px] sm:px-[100px] w-full  sm:flex-row flex-col flex justify-between">
+                className="max-w-[1170px] gap-[86px] bg-[rgba(2,9,23,0.4)] items-center text-center justify-center rounded-[6px] sm:py-[94px] py-[60px] px-[28px] sm:px-[100px] w-full  sm:flex-row flex-col flex justify-between">
                 <div className="">
                     <h3
                         className=" tracking-[-1px]  font-extrabold text-[40px] sm:text-[56px] leading-[40px] sm:leading-[64px]  text-white">

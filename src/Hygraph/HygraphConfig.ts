@@ -5,7 +5,7 @@ import {FAQSTypes, ProjectTypes, TestimonialTypes} from "@/app/Types";
 const customFetch: typeof fetch = (url, options = {}) => {
     return fetch(url, {
         ...options,
-        next: {revalidate: 300},
+        next: {revalidate: 0},
     });
 };
 
@@ -13,7 +13,7 @@ const hygraph = new GraphQLClient("https://eu-west-2.cdn.hygraph.com/content/cmb
 
 const GET_PROJECTS = `
   query GetProjects {
-  assets (where: { projectName_not: null }) {
+    projects (where: { projectName_not: null }) {
     id
     projectName
     projectDescription
@@ -54,8 +54,9 @@ const GET_FAQS = `
 `;
 
 export async function projectData(): Promise<ProjectTypes[]> {
-    const {assets} = await hygraph.request<{ assets: ProjectTypes[] }>(GET_PROJECTS);
-    return assets
+    const {projects} = await hygraph.request<{ projects: ProjectTypes[] }>(GET_PROJECTS);
+    console.log(projects)
+    return projects
 }
 
 export async function testimonialData(): Promise<TestimonialTypes[]> {

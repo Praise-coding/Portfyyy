@@ -66,17 +66,18 @@ function ProjectDetails({projectData, closeSection}: {
                                             className={"w-full block sm:hidden  text-[20px] text-center bg-[white] mb-[20px] rounded h-[50px]"}>
                                         Close
                                     </button>
-                                    <div className={"relative gap-[12px] flex max-h-[610px] overflow-hidden "}>
+                                    <div className={"relative gap-[12px] flex overflow-hidden "}>
                                         <div className={"w-[100%]  rounded sm:rounded-[8px] overflow-hidden"}>
                                             <div style={{transform: `translateX(${(changeImage / 5) + "%"})`}}
                                                  className={"w-[500%] transition-all duration-500 relative flex"}>
                                                 {projectData?.["projectImages"].map((image, key) => {
                                                     return (
-                                                        <div key={key} className={"w-[100%] "}>
-                                                            <Image width={800} height={600}
+                                                        <div key={key} className={"w-[100%] h-fit sm:max-h-[500px] bg-[rgba(0,0,0,0.5)] rounded sm:rounded-[8px] flex items-center"}>
+                                                            <Image width={800} height={500}
                                                                    src={image?.url}
+                                                                   priority={true}
                                                                    alt={image + " image"}
-                                                                   className={"object-cover object-top-left w-full rounded sm:rounded-[8px]  h-[350px] sm:h-[509px]"}/>
+                                                                   className={"object-contain object-top-left w-full rounded sm:rounded-[8px]  "}/>
                                                         </div>
 
                                                     )
@@ -152,6 +153,7 @@ function ProjectDetails({projectData, closeSection}: {
                                                      className={" hover:border-[rgba(255,255,255,0.5)] border-transparent  rounded-[12px] transition-all duration-[500]  border-[3px] cursor-pointer"}>
                                                     <Image quality={50} width={100} height={100} src={imageUrl?.url}
                                                            alt={projectData?.projectName + " image"}
+                                                           priority={true}
                                                            className={"sm:rounded-[8px] max-h-[80px] w-full min-h-[80px] h-full rounded   object-cover"}/>
                                                 </div>
                                             )
