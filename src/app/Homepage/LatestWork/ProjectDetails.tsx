@@ -66,18 +66,18 @@ function ProjectDetails({projectData, closeSection}: {
                                             className={"w-full block sm:hidden  text-[20px] text-center bg-[white] mb-[20px] rounded h-[50px]"}>
                                         Close
                                     </button>
-                                    <div className={"relative gap-[12px] flex overflow-hidden "}>
+                                    <div className={"relative gap-[12px] flex max-h-[610px] overflow-hidden "}>
                                         <div className={"w-[100%]  rounded sm:rounded-[8px] overflow-hidden"}>
                                             <div style={{transform: `translateX(${(changeImage / 5) + "%"})`}}
                                                  className={"w-[500%] transition-all duration-500 relative flex"}>
                                                 {projectData?.["projectImages"].map((image, key) => {
                                                     return (
-                                                        <div key={key} className={"w-[100%] h-fit sm:max-h-[500px] bg-[rgba(0,0,0,0.5)] rounded sm:rounded-[8px] flex items-center"}>
-                                                            <Image width={800} height={500}
-                                                                   src={image?.url}
+                                                        <div key={key} className={"w-[100%] h-[350px] sm:h-[509px] bg-[rgba(0,0,0,0.5)] flex items-center"}>
+                                                            <Image width={800} height={600}
                                                                    priority={true}
+                                                                   src={image?.url}
                                                                    alt={image + " image"}
-                                                                   className={"object-contain object-top-left w-full rounded sm:rounded-[8px]  "}/>
+                                                                   className={"object-contain object-top-left w-full rounded sm:rounded-[8px]"}/>
                                                         </div>
 
                                                     )

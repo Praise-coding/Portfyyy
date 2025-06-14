@@ -5,7 +5,7 @@ import {FAQSTypes, ProjectTypes, TestimonialTypes} from "@/app/Types";
 const customFetch: typeof fetch = (url, options = {}) => {
     return fetch(url, {
         ...options,
-        next: {revalidate: 0},
+        next: {revalidate: 300},
     });
 };
 
@@ -55,7 +55,6 @@ const GET_FAQS = `
 
 export async function projectData(): Promise<ProjectTypes[]> {
     const {projects} = await hygraph.request<{ projects: ProjectTypes[] }>(GET_PROJECTS);
-    console.log(projects)
     return projects
 }
 
