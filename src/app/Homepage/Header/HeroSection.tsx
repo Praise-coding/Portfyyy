@@ -7,7 +7,8 @@ import StringShorter from "@/app/Wrappers/StringShorter";
 const HeroSection = () => {
     return (
         <section className={"sm:mt-[114px] mt-[40px] flex justify-center px-[20px]"}>
-            <div className={"max-w-[1170px] grid grid-cols-1 md:grid-cols-2  flex justify-between gap-[50px] md:gap-[87px] w-full"}>
+            <div
+                className={"max-w-[1170px] grid grid-cols-1 md:grid-cols-2  flex justify-between gap-[50px] md:gap-[87px] w-full"}>
                 <div>
                     <div className={"grid gap-[20px] "}>
                         <p
@@ -59,7 +60,8 @@ const HeroSection = () => {
                                    className={"rounded-full w-[48px] h-[48px]"}/>
                         </div>
                         <div className={"flex-1"}>
-                            <StringShorter Element={"p"} once={false} word={["under", "Buhari"]}
+                            <StringShorter Element={"p"} once={false}
+                                           word={["A good website doesn’t just look clean, it works clean. Speed, structure, and simplicity always beat fancy fluff.", "Code is cheap. Clarity is rare. Real web development is about making things work for people, not just machines.", "Your site isn’t just a page, it’s your handshake, storefront, and pitch deck. Make it count.", "Frameworks change. Devices change. Trends change. But performance, usability, and trust—those always matter."]}
                                            className={"  leading-[32px] text-[rgba(255,255,255,0.64)]"}/>
 
                             <p className={"  mt-[4px] sm:mt-[-4px] leading-[32px] text-white"}>
